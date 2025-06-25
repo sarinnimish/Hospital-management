@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+       <!-- Form View -->
+    <record id="view_insurance_form" model="ir.ui.view">
+        <field name="name">insurance.form</field>
+        <field name="model">insurance</field>
+        <field name="arch" type="xml">
+            <form string="Insurance">
+                <group>
+                    <group>
+                        <field name="Ins_id"/>      
+                        <field name="owner"/>   
+                        <field name="insurance_type"/>  
+                        </group>
+                        <group> 
+                        <field name="insurance_company"/>   
+                        <field name="category"/>   
+                        <field name="member_since"/>   
+                        <field name="expiration_date"/>                  
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+        <!-- list view -->
+    <record id="view_insurance_list" model="ir.ui.view">
+        <field name="name">insurance.list</field>
+        <field name="model">insurance</field>
+        <field name="arch" type="xml">
+            <list>
+                        <field name="Ins_id"/>      
+                        <field name="owner"/>   
+                        <field name="insurance_type"/>   
+                        <field name="insurance_company"/>   
+                        <field name="category"/>   
+                        <field name="member_since"/>   
+                        <field name="expiration_date"/>      
+            </list>
+        </field>
+    </record>
+
+        <!-- action view -->
+     <record id="action_insurance" model="ir.actions.act_window">
+        <field name="name">insurance</field>
+        <field name="res_model">insurance</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

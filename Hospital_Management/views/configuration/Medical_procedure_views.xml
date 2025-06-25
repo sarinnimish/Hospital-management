@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+       <!-- Form View -->
+    <record id="view_medical_procedures_form" model="ir.ui.view">
+        <field name="name">medical.procedures.form</field>
+        <field name="model">medical.procedures</field>
+        <field name="arch" type="xml">
+            <form string="medical procedures">
+                <group>
+                    <group>
+                        <field name="code"/>
+                        <field name="long_text"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+        <!-- list view -->
+    <record id="view_medical_procedures_list" model="ir.ui.view">
+        <field name="name">medical.procedures.list</field>
+        <field name="model">medical.procedures</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="code"/>
+                <field name="long_text"/>
+            </list>
+        </field>
+    </record>
+
+        <!-- action view -->
+     <record id="action_medical_procedures" model="ir.actions.act_window">
+        <field name="name">medical procedures</field>
+        <field name="res_model">medical.procedures</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

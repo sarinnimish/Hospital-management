@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+           Action View
+ <record id="action_lab_requests" model="ir.actions.act_window">
+           <field name="name">Lab Information</field>
+           <field name="res_model">lab.requests</field>
+           <field name="view_mode">list,form</field>
+        </record>
+
+
+     <!-- List View  -->
+        <record id="view_lab_requests_tree" model="ir.ui.view">
+          <field name="name">lab.requests.tree</field>
+          <field name="model">lab.requests</field>
+          <field name="arch" type="xml">
+            <list>
+                <field name="request"/>
+                <field name="test_type"/>
+                <field name="date"/>
+                <field name="patient_name"/>
+                <field name="doctor"/>
+                <field name="state"/>
+            </list>
+          </field>
+        </record>
+
+
+     <!-- Form view -->
+ <record id="view_lab_requests_form" model="ir.ui.view">
+           <field name="name">lab.requests.form</field>
+           <field name="model">lab.requests</field>
+           <field name="arch" type="xml">
+        <form>  
+
+    <header>
+                    <button name="action_open_test_wizard" type="object" string="Create Lab Result" class="oe_highlight"/>
+                    <button name="action_open_lab_test_invoice_wizard" type="object" string="Create Invoice" class="btn-primary"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,tested,cancel"/>
+                </header>
+                
+           <body>
+                  <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="test_type">Patient Name=</label>
+                                <field name="test_type" />
+                            </div>
+
+                            <div style="flex: 1">
+                                <label for="patient_name">Invoice to Insurance=</label>
+                                <field name="patient_name" />
+                            </div>
+                        </div>
+                
+                   <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="date">Patient Name=</label>
+                                <field name="date" />
+                            </div>
+
+                            <div style="flex: 1">
+                                <label for="doctor">Invoice to Insurance=</label>
+                                <field name="doctor" />
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="invoice_to_insurance">Prescription Date=</label>
+                                <field name="invoice_to_insurance" />
+                            </div>
+                        </div>
+                        </body>
+        </form>
+           </field>
+ </record>   
+ </odoo>
+
+

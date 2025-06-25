@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+           <!-- Action View -->
+ <record id="action_apache_score" model="ir.actions.act_window">
+           <field name="name">APACHE Score</field>
+           <field name="res_model">apache.score</field>
+           <field name="view_mode">list,form</field>
+        </record>
+
+
+ <!-- List View  -->
+        <record id="view_apache_score_tree" model="ir.ui.view">
+          <field name="name">apache.score.tree</field>
+          <field name="model">apache.score</field>
+          <field name="arch" type="xml">
+            <list>
+                <field name="registration_code"/>
+                <field name="date"/>
+                <field name="score"/>
+            </list>
+          </field>
+        </record>
+
+
+     <!-- Form view -->
+<record id="view_apache_score_form" model="ir.ui.view">
+           <field name="name">apache.score.form</field>
+           <field name="model">apache.score</field>
+           <field name="arch" type="xml">
+        <form>
+
+                 <div style="display: flex; justify-content: space-between;">
+                 <div style="flex: 1; ">
+                                <label for="registration_code">Id=</label>
+                                <field name="registration_code" />
+                            </div>
+                            </div>
+                
+                   <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="date">Patient Name=</label>
+                                <field name="date" />
+                            </div>
+
+                            <div style="flex: 1">
+                                <label for="age">Invoice to Insurance=</label>
+                                <field name="age" />
+                            </div>
+                        </div>
+                        <br>
+                        </br>
+                     <html> 
+                 <body>
+                 <h2 style="color: rgb(143, 44, 185);">Physiological</h2>
+                 </body>
+                 </html> 
+                    <br>
+                    </br>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="temperature">Prescription Date=</label>
+                                <field name="temperature" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="heart_rate">Login User=</label>
+                                <field name="heart_rate" />
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="flo2">Prescription Date=</label>
+                                <field name="flo2" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="paco2">Login User=</label>
+                                <field name="paco2" />
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="ph">Prescription Date=</label>
+                                <field name="ph" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="potassium">Login User=</label>
+                                <field name="potassium" />
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="hematcocrit">Prescription Date=</label>
+                                <field name="hematcocrit" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="arf">Login User=</label>
+                                <field name="arf" />
+                            </div>
+                        </div>
+                         <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="map">Prescription Date=</label>
+                                <field name="map" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="respiratory_rate">Login User=</label>
+                                <field name="respiratory_rate" />
+                            </div>
+                        </div>
+                         <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="pao2">Prescription Date=</label>
+                                <field name="pao2" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="do2">Login User=</label>
+                                <field name="do2" />
+                            </div>
+                        </div>
+                         <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="sodium">Prescription Date=</label>
+                                <field name="sodium" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="creatinine">Login User=</label>
+                                <field name="creatinine" />
+                            </div>
+                        </div>
+                         <div style="display: flex; justify-content: space-between;">
+                 <div style="flex: 1; ">
+                                <label for="wbc">Id=</label>
+                                <field name="wbc" />
+                            </div>
+                            </div>
+                    <br>
+                        </br>
+
+                 <html> 
+                 <body>
+                 <h2 style="color: rgb(143, 44, 185);">Chronic</h2>
+                 </body>
+                 </html> 
+                 <br>
+                 </br>
+                   
+                   <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="chronic_condition">Prescription Date=</label>
+                                <field name="chronic_condition" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="score">Login User=</label>
+                                <field name="score" />
+                            </div>
+                        </div>
+
+                 
+        </form>
+           </field>
+ </record>   
+ </odoo>
+
+
+
+

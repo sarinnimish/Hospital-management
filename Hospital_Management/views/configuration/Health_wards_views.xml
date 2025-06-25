@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+       <!-- Form View -->
+    <record id="view_health_center_wards_form" model="ir.ui.view">
+        <field name="name">health.center.wards.form</field>
+        <field name="model">health.center.wards</field>
+        <field name="arch" type="xml">
+            <form string="health center units">
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="beds"/>
+                        <field name="Gender"/>
+                        <field name="institution"/>
+                        <field name="status"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+        <!-- list view -->
+    <record id="view_health_center_wards_list" model="ir.ui.view">
+        <field name="name">health.center.wards.list</field>
+        <field name="model">health.center.wards</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="beds"/>
+                <field name="Gender"/>
+                <field name="institution"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+        <!-- action view -->
+     <record id="action_health_center_wards" model="ir.actions.act_window">
+        <field name="name">health.center.wards</field>
+        <field name="res_model">health.center.wards</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

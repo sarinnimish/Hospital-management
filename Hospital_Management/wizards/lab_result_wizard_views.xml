@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="lab_result_1_wizard_form" model="ir.ui.view">
+        <field name="name">lab.result.1.wizard.form</field>
+        <field name="model">lab.result.1</field>
+        <field name="arch" type="xml">
+            <form string="Create Lab Result">
+                <h2 style="color: rgb(143, 44, 185);">Do you want to generate the test(s)?</h2>
+                <h2 style="color: rgb(143, 44, 185);">Create Tests</h2>
+                <group>
+                    <field name="request_id" invisible="1"/>
+                </group>
+                <footer>
+                    <button name="confirm" type="object" string="Create Lab Test" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

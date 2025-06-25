@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+           <!-- Action View -->
+ <record id="action_newborn" model="ir.actions.act_window">
+           <field name="name">Newborn Information</field>
+           <field name="res_model">newborn</field>
+           <field name="view_mode">list,form</field>
+        </record>
+
+
+ <!-- List View  -->
+        <record id="view_newborn_tree" model="ir.ui.view">
+          <field name="name">newborn.tree</field>
+          <field name="model">newborn</field>
+          <field name="arch" type="xml">
+            <list>
+                <field name="baby_id"/>
+                <field name="baby_name"/>
+                <field name="mother"/>
+                <field name="dob"/>
+                <field name="sex"/>
+                <field name="length"/>
+                <field name="weight"/>
+            </list>
+          </field>
+        </record>
+
+
+     <!-- Form view -->
+<record id="view_newborn_form" model="ir.ui.view">
+           <field name="name">newborn.form</field>
+           <field name="model">newborn</field>
+           <field name="arch" type="xml">
+        <form>
+           <sheet>
+                <group>
+                    <div class="oe_title">
+                       
+                            <field name="baby_image" widget="image"
+                                   style="width: 150px; height: 150px; margin-left: 0px"/>
+                      
+                    </div>
+                    <div>
+                    <field name="baby_id"/>
+                     </div>
+                </group>
+                 
+                 <html> 
+                 <h2 style="color: rgb(143, 44, 185);">Main</h2>
+                 <br>
+                 </br>
+<group>    
+                              
+                                <field name="baby_name" />
+                                <field name="sex" />
+                                <field name="discharged" />   
+                                <field name="weight" />
+                                <field name="doctor" />
+                                <field name="mother" />
+                                <field name="dob" />
+                                <field name="length" />
+                                <field name="cephalic_perameter" />
+</group>                 
+
+               <br>
+                  </br>
+                <html> 
+                 <h2 style="color: rgb(143, 44, 185);">Apgar Scores</h2>
+
+                 <br>
+                  </br>
+                
+                    <field name="newborn_list_ids">
+                        <list>
+                            <field name="minute"/>
+                            <field name="respiration"/>
+                            <field name="activity"/>
+                            <field name="appearance"/>
+                            <field name="pulse"/>
+                            <field name="agpar_score"/>
+                            <field name="grimace"/>
+                        </list>
+                    </field>
+               
+                 </html>
+                 </html> 
+                 </sheet>
+        </form>
+           </field>
+ </record>   
+ </odoo>

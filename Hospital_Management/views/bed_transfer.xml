@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+     <!-- List View -->
+        <record id="view_hospital_patient_hospitalization_tree" model="ir.ui.view">
+          <field name="name">hospital.patient.hospitalization.tree</field>
+          <field name="model">hospital.patient.hospitalization</field>
+          <field name="arch" type="xml">
+            <list>
+                <field name="ap_id"/>
+                <field name="patient_id"/>
+                <field name="hospitalization_date"/>
+                <field name="expected_discharge_date"/>
+                <field name="hospital_bed_id"/>
+                <field name="admission_type"/>  
+            </list>
+          </field>
+        </record>
+    <!-- Hospitalization Form View -->
+    <record id="hospital_patient_hospitalization_form" model="ir.ui.view">
+        <field name="name">hospital.patient.hospitalization.form</field>
+        <field name="model">hospital.patient.hospitalization</field>
+        <field name="arch" type="xml">
+            <form string="Patient Hospitalization">
+             <html> 
+                 <body>
+                 <h1 style="color: rgb(143, 44, 185);">Administrative Data</h1>
+                 </body>
+                 </html> 
+                 <br></br>
+                  <div style="display: flex; justify-content: space-between;">
+                 <div style="flex: 1; margin-right: 10px;">
+                                <label for="ap_id">Id=</label>
+                                <field name="ap_id" />
+                            </div>
+                            </div>
+                        <br>
+                        </br>
+                   <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="patient_id">Patient Name=</label>
+                                <field name="patient_id" options="{'no_create': True}" />
+                            </div>
+
+                            <div style="flex: 1;">
+                                <label for="hospital_bed_id">Physician=</label>
+                                <field name="hospital_bed_id" />
+                            </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="hospitalization_date">Patient Name=</label>
+                                <field name="hospitalization_date" />
+                            </div>
+
+                            <div style="flex: 1;">
+                                <label for="expected_discharge_date">Physician=</label>
+                                <field name="expected_discharge_date" />
+                            </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="attending_physician">Patient Name=</label>
+                                <field name="attending_physician" />
+                            </div>
+
+                            <div style="flex: 1;">
+                                <label for="operating_physician">Physician=</label>
+                                <field name="operating_physician" />
+                            </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="admission_type">Patient Name=</label>
+                                <field name="admission_type" />
+                            </div>
+
+                            <div style="flex: 1;">
+                                <label for="reason_for_admission">Physician=</label>
+                                <field name="reason_for_admission" />
+                            </div>
+                            </div>
+                            <br></br>
+                 <html> 
+                 <body>
+                 <h2 style="color: rgb(143, 44, 185);">Extra Info</h2>
+                 </body>
+                 </html> 
+                <br></br>
+                <!-- Bed Transfer History List View -->
+                 <header>
+                    <button name="action_transfer_bed" type="object" string="Transfer Bed" class="oe_highlight"/>
+                </header>
+                <notebook>
+                    <page string="Bed Transfer History">
+                        <field name="transfer_bed_ids">
+                            <list string="Bed Transfer History">
+                                <field name="date"/>
+                                <field name="bed_from"/>
+                                <field name="bed_to"/>
+                                <field name="reason"/>
+                            </list>
+                        </field>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+<record id="action_hospital_bed_transfer" model="ir.actions.act_window">
+    <field name="name">Hospital Bed Transfer</field>
+    <field name="res_model">hospital.patient.hospitalization</field>
+    <field name="view_mode">list,form</field>
+</record>
+</odoo>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+       <!-- Form View -->
+    <record id="view_nursing_form" model="ir.ui.view">
+        <field name="name">nursing.form</field>
+        <field name="model">nursing</field>
+        <field name="arch" type="xml">
+            <form string="Nursing Info">
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="patient_id"/>
+                        <field name="start"/>
+                        <field name="ordering_physician"/>
+                    </group>
+                    <group>
+                        <field name="health_professional"/>
+                        <field name="evolution" />
+                        <field name="base_condition"/>
+                        <field name="session"/>
+                    </group>
+                </group>
+
+                <notebook>
+                 <page string="Main">
+                   <h2 style="color: rgb(143, 44, 185);">Procedures</h2>
+                    <field name="procedure_ids">
+                        <list>
+                            <field name="code"/>
+                            <field name="comments"/>
+                        </list>
+                    </field>
+                      <br></br>
+                     <h2 style="color: rgb(143, 44, 185);">Summary</h2>
+                    <group>
+                        <group>
+                       <field name="warning"/>
+                        </group>
+
+                        <group>
+                        <field name="end" />
+                        </group>
+
+                        <group> 
+                        <field name="next_session"/>
+                        </group>
+                    </group>    
+                 </page>
+                 <page string="Other">
+                 </page>
+                 <page string="Medication">
+                 </page>
+                 </notebook>
+            
+          
+            </form>
+        </field>
+    </record>
+
+        <!-- list view -->
+    <record id="view_nursing_list" model="ir.ui.view">
+        <field name="name">nursing.list</field>
+        <field name="model">nursing</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="warning"/>
+                <field name="name"/>
+                <field name="patient_id"/>
+                <field name="start"/>
+                <field name="health_professional"/>
+                <field name="evolution"/>
+            </list>
+        </field>
+    </record>
+
+        <!-- action view -->
+     <record id="action_nursing" model="ir.actions.act_window">
+        <field name="name">Nursing Info</field>
+        <field name="res_model">nursing</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

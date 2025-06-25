@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+       <!-- Form View -->
+    <record id="view_health_center_beds_form" model="ir.ui.view">
+        <field name="name">health.center.beds.form</field>
+        <field name="model">health.center.beds</field>
+        <field name="arch" type="xml">
+            <form string="health center Beds">
+                <group>
+                    <group>
+                        <field name="bed"/>
+                        <field name="Ward"/>                    
+                        <field name="status"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+        <!-- list view -->
+    <record id="view_health_center_beds_list" model="ir.ui.view">
+        <field name="name">health.center.beds.list</field>
+        <field name="model">health.center.beds</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="bed"/>
+                <field name="Ward"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+        <!-- action view -->
+     <record id="action_health_center_beds" model="ir.actions.act_window">
+        <field name="name">health.center.beds</field>
+        <field name="res_model">health.center.beds</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

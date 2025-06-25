@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    Report Template-->
+    <template id="report_prescription_card_template">
+        <t t-call="web.html_container">
+           <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <html> 
+                 <body>
+                 <h1 style=" text-align: center;">Prescription Information</h1>
+                 </body>
+                 </html> 
+                        
+                        <br></br>
+                        <p>
+                           Patient Name :
+                            <span t-field="o.Patient_name"/>
+                        </p>
+                        <p>
+                           prescription Id :
+                            <span t-field="o.prescription_detail_ids"/>
+                        </p>
+                        <p>
+                          Prescription Date :
+                            <span t-field="o.prescription_date"/>
+                        </p>
+                        <p>
+                            Pharmacy :
+                            <span t-field="o.pharmacy"/>
+                        </p>
+                        <p>
+                          Prescribing Doctor :
+                            <span t-field="o.prescribing_doctor"/>
+                        </p>
+                        <p>
+                         Login User :
+                            <span t-field="o.Login_user"/>
+                        </p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
+

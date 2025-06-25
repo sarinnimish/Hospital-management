@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+       <!-- Form View -->
+    <record id="view_medicament_administration_form" model="ir.ui.view">
+        <field name="name">medicament.administration.form</field>
+        <field name="model">medicament.administration</field>
+        <field name="arch" type="xml">
+            <form string="medicament administration">
+                <group>
+                    <group>
+                        <field name="code"/>
+                        <field name="route"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+        <!-- list view -->
+    <record id="view_medicament_administration_list" model="ir.ui.view">
+        <field name="name">medicament.administration.list</field>
+        <field name="model">medicament.administration</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="code"/>
+                <field name="route"/>
+            </list>
+        </field>
+    </record>
+
+        <!-- action view -->
+     <record id="action_medicament_administration" model="ir.actions.act_window">
+        <field name="name">medicament.administration</field>
+        <field name="res_model">medicament.administration</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

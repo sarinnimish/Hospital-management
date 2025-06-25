@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+           <!-- Action View -->
+ <record id="action_prescription_management" model="ir.actions.act_window">
+           <field name="name">Prescription</field>
+           <field name="res_model">prescription.management</field>
+           <field name="view_mode">list,form</field>
+        </record>
+
+
+ <!-- List View  -->
+        <record id="view_prescription_management_tree" model="ir.ui.view">
+          <field name="name">prescription.management.tree</field>
+          <field name="model">prescription.management</field>
+          <field name="arch" type="xml">
+            <list>
+                <field name="id"/>
+                <field name="Patient_name"/>
+                <field name="prescription_date"/>
+                <field name="Login_user"/>
+                <field name="pharmacy"/>
+                <field name="prescribing_doctor"/>
+                <field name="Invoice_to_Insurance"/>
+         
+            </list>
+          </field>
+        </record>
+
+
+     <!-- Form view -->
+<record id="view_prescription_management_form" model="ir.ui.view">
+           <field name="name">prescription.management.form</field>
+           <field name="model">prescription.management</field>
+           <field name="arch" type="xml">
+        <form>
+
+           <html> 
+                 <body>
+                 <h1 style="color: rgb(143, 44, 185);">Patient and Doctor Information</h1>
+                 </body>
+                 </html> 
+
+                 <br>
+                            </br>
+                 
+                 <div style="display: flex; justify-content: space-between;">
+                 <div style="flex: 1; margin-right: 10px;">
+                                <label for="id">Id=</label>
+                                <field name="id" />
+                            </div>
+                            </div>
+                
+                   <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="Patient_name">Patient Name=</label>
+                                <field name="Patient_name" />
+                            </div>
+
+                            <div style="flex: 1">
+                                <label for="Invoice_to_Insurance">Invoice to Insurance=</label>
+                                <field name="Invoice_to_Insurance" />
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="prescription_date">Prescription Date=</label>
+                                <field name="prescription_date" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="Login_user">Login User=</label>
+                                <field name="Login_user" />
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="pharmacy">Pharmacy=</label>
+                                <field name="pharmacy" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="prescribing_doctor">Prescribing Doctor=</label>
+                                <field name="prescribing_doctor" />
+                            </div>
+                        </div>
+
+                        <br>
+                        </br>
+
+                    <html> 
+                 <body>
+                 <h1 style="color: rgb(143, 44, 185);">Prescription Detail</h1>
+                 </body>
+                 </html>  
+                 
+                 <br>
+                 </br>
+
+                
+                    <field name="prescription_detail_ids">
+                        <list>
+                            <field name="Medicamant"/>
+                            <field name="Indication"/>
+                            <field name="Dose"/>
+                            <field name="Dose_Unit"/>
+                            <field name="Form"/>
+                            <field name="Frequency"/>
+                            <field name="Quantity"/>
+                            <field name="Treatment_Duration"/>
+                            <field name="Treatment_Period"/>
+                            <field name="Allow_Substitution"/>
+                            <field name="Comment"/>
+                        </list>
+                    </field>
+            
+                
+                <notebook>
+                <page string=" ">
+                </page>
+                 </notebook>
+
+                 <html> 
+                 <body>
+                 <h2 style="color: rgb(143, 44, 185);">Notes</h2>
+                 </body>
+                 </html> 
+        </form>
+           </field>
+ </record>   
+ </odoo>
+
+
+
+

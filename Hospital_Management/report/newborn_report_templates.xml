@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    Report Template-->
+    <template id="report_newborn_card_template">
+        <t t-call="web.html_container">
+           <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <html> 
+                 <body>
+                 <h1 style=" text-align: center;">Newborn Information</h1>
+                 </body>
+                 </html> 
+                        
+                        <br></br>
+                        <p>
+                           Patient Name :
+                            <span t-field="o.Patient_name"/>
+                        </p>
+                        <p>
+                           Physician :
+                            <span t-field="o.Physician"/>
+                        </p>
+                        <p>
+                          Appoinment Date :
+                            <span t-field="o.Appoinment_Date"/>
+                        </p>
+                        <p>
+                           Appoinment End :
+                            <span t-field="o.Appoinment_End"/>
+                        </p>
+                        <p>
+                           Urgency Level :
+                            <span t-field="o.Urgency_Level"/>
+                        </p>
+                        <p>
+                          Invoice to Insurance :
+                            <span t-field="o.Invoice_to_Insurance"/>
+                        </p>
+                        <p>
+                           Consultation service :
+                            <span t-field="o.Consultation_service"/>
+                        </p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
+

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+           <!-- Action View -->
+ <record id="action_ecg" model="ir.actions.act_window">
+           <field name="name">ECG Information</field>
+           <field name="res_model">ecg</field>
+           <field name="view_mode">list,form</field>
+        </record>
+
+
+ <!-- List View  -->
+        <record id="view_ecg_tree" model="ir.ui.view">
+          <field name="name">ecg.tree</field>
+          <field name="model">ecg</field>
+          <field name="arch" type="xml">
+            <list>
+                <field name="date"/>
+                <field name="registration_code"/>
+                <field name="lead"/>
+                <field name="axis"/>
+                <field name="rate"/>
+                <field name="pacemaker"/>
+                <field name="rhythm"/>
+                <field name="pr"/>
+                <field name="qrs"/>
+                <field name="qt"/>
+                <field name="st_segment"/>
+                <field name="t_wave_inversion"/>
+                <field name="interpretation"/>
+            </list>
+          </field>
+        </record>
+
+
+     <!-- Form view -->
+<record id="view_ecg_form" model="ir.ui.view">
+           <field name="name">ecg.form</field>
+           <field name="model">ecg</field>
+           <field name="arch" type="xml">
+        <form>
+
+                 <div style="display: flex; justify-content: space-between;">
+                 <div style="flex: 1; ">
+                                <label for="registration_code">Id=</label>
+                                <field name="registration_code" />
+                            </div>
+                            </div>
+                
+                   <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="date">Patient Name=</label>
+                                <field name="date" />
+                            </div>
+
+                            <div style="flex: 1">
+                                <label for="lead">Invoice to Insurance=</label>
+                                <field name="lead" />
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="axis">Prescription Date=</label>
+                                <field name="axis" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="rate">Login User=</label>
+                                <field name="rate" />
+                            </div>
+                        </div>
+                          <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="pacemaker">Prescription Date=</label>
+                                <field name="pacemaker" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="rhythm">Login User=</label>
+                                <field name="rhythm" />
+                            </div>
+                        </div>
+                          <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="pr">Prescription Date=</label>
+                                <field name="pr" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="qrs">Login User=</label>
+                                <field name="qrs" />
+                            </div>
+                        </div>
+                          <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="qt">Prescription Date=</label>
+                                <field name="qt" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="st_segment">Login User=</label>
+                                <field name="st_segment" />
+                            </div>
+                        </div>
+                
+                 
+        </form>
+           </field>
+ </record>   
+ </odoo>
+
+
+
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<templates>
+   <t t-name="Hospital_Management.ListView.Buttons" t-inherit="web.ListView.Buttons">
+       <xpath expr="//div[hasclass('o_list_buttons')]" position="after">
+           <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    File
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" t-on-click="onUploadClick">Upload</a></li>
+                    <li><a class="dropdown-item" href="/download/hospital_excel" >Download</a></li>
+                </ul>
+            </div>
+       </xpath>
+   </t>
+</templates>
+
+

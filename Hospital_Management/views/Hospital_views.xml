@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+                <!-- action view -->
+       <record id="action_hospital_management" model="ir.actions.act_window">
+           <field name="name">Patients</field>
+           <field name="res_model">hospital.management</field>
+           <field name="view_mode">list,form,kanban</field>
+            <field name="context">{}</field>
+           <!-- <field name="domain">[('is_same_currency', '=', True)]</field> -->
+        </record>
+
+
+            <!-- List View  -->
+        <record id="view_hospital_management_tree" model="ir.ui.view">
+          <field name="name">hospital.management.tree</field>
+          <field name="model">hospital.management</field>
+          <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="Date_of_Birth"/>
+                <field name="Marital_Status"/>
+                <field name="gender"/>
+                <field name="Address"/>
+                <field name="currency_id"/>
+            </list>
+          </field>
+        </record>
+
+        <record id="view_hospital_management_button_tree" model="ir.ui.view">
+          <field name="name">hospital.management.button</field>
+          <field name="model">hospital.management</field>
+          <field name="inherit_id" ref="Hospital_Management.view_hospital_management_tree"/>
+          <field name="arch" type="xml">
+            <xpath expr="//list" position="attributes">
+            <attribute name='js_class'>button_in_list</attribute>
+            </xpath>
+          </field>
+        </record>
+
+            <!-- kanban view -->
+        <record id="view_hospital_management_kanban" model="ir.ui.view">
+          <field name="name">hospital.management.kanban</field>
+          <field name="model">hospital.management</field>
+          <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" sample="1" quick_create="false">
+                <templates>
+                    <t t-name="card">
+                        <div>
+                            <field name="Patient_Image" widget="image" class="oe_avatar" options="{'size': [150, 200]}"/>
+                        </div>
+                        <div class="d-flex mb-2" style="justify-content: space-between;">
+                            <field name="name" class="fw-bolder fs-5"/>
+                        </div>
+                        <div class="d-flex text-muted">
+                            <label for="Date_of_Birth">Date of Birth=</label>
+                            <field name="Date_of_Birth"/>
+                        </div>
+                        <div class="d-flex text-muted">
+                            <label for="Marital_Status">Marital Status=</label>
+                            <field name="Marital_Status"/>
+                        </div>
+                        <div class="d-flex text-muted">
+                            <label for="Address">Address=</label>
+                            <field name="Address"/>
+                        </div>
+                        <div class="d-flex text-muted">
+                            <label for="gender">Gender=</label>
+                            <field name="gender"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+          </field>
+        </record>
+
+                <!-- Form View -->
+        <record id="view_hospital_management_form" model="ir.ui.view">
+           <field name="name">hospital.management.form</field>
+           <field name="model">hospital.management</field>
+           <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <div class="oe_title">
+                        <hbox>
+                            <field name="Patient_Image" widget="image"
+                                   style="width: 200px; height: 200px; margin-left: 0px"/>
+                        </hbox>
+                    </div>
+                    <div>
+                     <h1 style="color: rgb(143, 44, 185);"><field name="name" placeholder="Enter Your Name"/></h1>
+                     </div>
+                </group>
+                <group>
+                    <group>
+                        <field name="Date_of_Birth"/>
+                        <field name="Marital_Status"/>
+                    </group>
+                    <group>
+                     <field name="gender"/>
+                     <field name="Address"/>
+                    </group>
+                    <group>
+                    <field name="age"/>
+                    <field name="currency_id"/>
+                    </group>
+                    <group>
+                    <field name="primary_doctor_care"/>
+                    </group>
+                </group>
+                <html>
+                 <body>
+                 <h2 style="color: rgb(143, 44, 185);">Patients Critical Information</h2>
+
+               <notebook>
+                <page string="General Information">
+                 <notebook>
+                 <page string="Lab Tests">
+                 </page>
+                 <page string="Medication">
+                 </page>
+                 <page string="Vacinations">
+                 </page>
+                 </notebook>
+
+                 <html> 
+                 <body>
+                 <h2 style="color: rgb(143, 44, 185);">Patients General Information</h2>
+                 </body>
+                 </html> 
+                 
+                   <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="Blood_Type">Blood Type=</label>
+                                <field name="Blood_Type" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="Ethnic_Group">Ethnic Group=</label>
+                                <field name="Ethnic_Group" />
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="Insurance">Insurance=</label>
+                                <field name="Insurance" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="Rh">Rh=</label>
+                                <field name="Rh" />
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="Family">Family=</label>
+                                <field name="Family" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="Receivable">Receivable=</label>
+                                <field name="Receivable" />
+                            </div>
+                        </div>
+                 <html> 
+                 <body>
+                 <h2 style="color:rgb(143, 44, 185);">Patients Extra Information</h2>
+                 </body>
+                 </html>   
+
+                  <div>
+                        <label for="Deceased">Deceased=</label>
+                        <field name="Deceased" widget="boolean" />
+                  </div>
+                 
+                </page>
+                <page string="Diseases">
+                    <field name="phone" />
+                    <field name="email" />
+                </page>
+                <page string="Evaluations">
+                   
+                </page>
+                <page string="Surgeries">
+                   
+                </page>
+                <page string="Genetic Risks">
+                   
+                </page>
+                <page string="Socioeconomics">
+                   
+                </page>
+                <page string="Lifestyle">
+                    
+                </page>
+
+               </notebook> 
+               </body>
+            </html>
+            </sheet>
+        </form>
+           </field>
+        </record>   
+</odoo>
+

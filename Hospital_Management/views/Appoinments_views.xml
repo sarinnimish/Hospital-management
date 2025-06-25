@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+           <!-- Action View -->
+ <record id="action_appoinments_management" model="ir.actions.act_window">
+           <field name="name">Appoinments</field>
+           <field name="res_model">appoinments.management</field>
+           <field name="view_mode">list,form</field>
+           <!-- <field name="create">false</field> 
+           <field name="edit">false</field>  -->
+        </record>
+
+  <!-- List View  -->
+        <record id="view_appoinments_management_tree" model="ir.ui.view">
+          <field name="name">appoinments.management.tree</field>
+          <field name="model">appoinments.management</field>
+          <field name="arch" type="xml">
+            <list>
+                <field name="apt_id"/>
+                <field name="Patient_name"/>
+                <field name="physician"/>
+                <field name="Appoinment_Date"/>
+                <field name="Appoinment_End"/>
+                <field name="Patient_Status"/>
+                <field name="Invoice_Exempt"/>
+                <field name="Status"/>
+                <field name="Validity_Date"/>
+                <field name="health_centre"/>
+                <field name="Inpatient_Registration"/>
+                <field name="Duration"/>
+                <field name="Urgency_Level"/>
+                <field name="Invoice_to_Insurance"/>
+                <field name="Consultation_service"/>    
+            </list>
+          </field>
+        </record>
+
+        <!-- Form view -->
+<record id="view_appoinments_management_form" model="ir.ui.view">
+           <field name="name">appoinments.management.form</field>
+           <field name="model">appoinments.management</field>
+           <field name="arch" type="xml">
+        <form create="false" edit="false">
+    
+                 <div style="display: flex; justify-content: space-between;">
+                 <div style="flex: 1; margin-right: 10px;">
+                                <label for="apt_id">Id=</label>
+                                <field name="apt_id" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="speciality">speciality=</label>
+                                <field name="speciality" />
+                            </div>
+                            </div>
+                        <br>
+                        </br>
+                   <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="Patient_name">Patient Name=</label>
+                                <field name="Patient_name" options="{'no_create': True}" />
+                            </div>
+
+                            <div style="flex: 1;">
+                                <label for="physician">Physician=</label>
+                                <field name="physician" />
+                            </div>
+                            </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="Appoinment_Date">Appoinment Date=</label>
+                                <field name="Appoinment_Date" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="Appoinment_End">Appoinment End=</label>
+                                <field name="Appoinment_End" />
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="Patient_Status">Patient Status=</label>
+                                <field name="Patient_Status" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="Invoice_Exempt">Invoice Exempt=</label>
+                                <field name="Invoice_Exempt" />
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="Status">Status=</label>
+                                <field name="Status" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="Validity_Date">Validity Date=</label>
+                                <field name="Validity_Date" />
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="health_centre">health centre=</label>
+                                <field name="health_centre" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="Inpatient_Registration">Inpatient Registration=</label>
+                                <field name="Inpatient_Registration" />
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="Duration">Duration=</label>
+                                <field name="Duration" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="Urgency_Level">Urgency Level=</label>
+                                <field name="Urgency_Level" />
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <label for="Invoice_to_Insurance">Invoice to Insurance=</label>
+                                <field name="Invoice_to_Insurance" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="Consultation_service">Consultation service=</label>
+                                <field name="Consultation_service" />
+                            </div>
+                        </div>
+
+                     <notebook>
+                <page string="Comments">
+                </page>
+                </notebook>
+                 
+        </form>
+           </field>
+</record>   
+</odoo>
+
+
+
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data noupdate='1'>
+<record id="increment_appoinment_id_sequence" model="ir.sequence">
+<field name="name">Field Incrementation</field>
+<field name="code">appoinments.management</field>
+<field name="prefix">APT</field>
+<field name="padding">2</field>
+<field name="number_increment">1</field>
+</record>
+
+<record id="increment_hospital_patient_id_sequence" model="ir.sequence">
+<field name="name">Field Increment</field>
+<field name="code">hospital.patient.hospitalization</field>
+<field name="prefix">INPAC</field>
+<field name="padding">2</field>
+<field name="number_increment">1</field>
+</record>
+
+<record id="increment_newborn_id_sequence" model="ir.sequence">
+<field name="name">Field Increment</field>
+<field name="code">newborn</field>
+<field name="prefix">NEW</field>
+<field name="padding">2</field>
+<field name="number_increment">1</field>
+</record>
+
+<record id="increment_lab_id_sequence" model="ir.sequence">
+<field name="name">Field Increment</field>
+<field name="code">lab.requests</field>
+<field name="prefix">LABT</field>
+<field name="padding">2</field>
+<field name="number_increment">1</field>
+</record>
+
+
+<record id="increment_test_id_sequence" model="ir.sequence">
+<field name="name">Field Increment</field>
+<field name="code">lab.test.type</field>
+<field name="prefix">TEST</field>
+<field name="padding">2</field>
+<field name="number_increment">1</field>
+</record>
+</data>
+</odoo>
